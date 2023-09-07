@@ -1,0 +1,19 @@
+body{
+	background:#000;
+	text-align:center;
+	font-family:consolas;
+	display:flex;
+	justify-content:center;
+  	align-items:center;
+	padding:0;
+	margin:auto;
+}
+#canvas{
+	border:solid #000 0.5vh;
+	left:25vw;
+	/*width:133vh;
+	height:99vh;
+	*/
+	width:99vw;
+	height:99vh;
+}
