@@ -13,17 +13,13 @@ setInterval(function(){
 		estrellas[i].x += 0.05;
 		estrellas[i].y += 0.05;
 
-		if(estrellas[i].x > print.cvs.width+print.cvs.width/4){
+		if(estrellas[i].x > print.cvs.width+print.cvs.width/4)
 			estrellas[i].x = -print.cvs.width/4;
-		}
-		if(estrellas[i].x < -print.cvs.width/4){
+		if(estrellas[i].x < -print.cvs.width/4)
 			estrellas[i].x = print.cvs.width+print.cvs.width/4;
-		}
-		if(estrellas[i].y > print.cvs.height+print.cvs.height/4){
+		if(estrellas[i].y > print.cvs.height+print.cvs.height/4)
 			estrellas[i].y = -print.cvs.height/4;
-		}
-		if(estrellas[i].y < -print.cvs.height/4){
+		if(estrellas[i].y < -print.cvs.height/4)
 			estrellas[i].y = print.cvs.height+print.cvs.height/4;
-		}
 	}
 },10);

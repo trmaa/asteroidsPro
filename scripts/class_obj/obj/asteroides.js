@@ -17,18 +17,14 @@ setInterval(function(){
 		asteroides[i].x -= Math.cos(asteroides[i].a*(2*Math.PI/360))*0.5;
 		asteroides[i].y -= Math.sin(asteroides[i].a*(2*Math.PI/360))*0.5;
 
-		if(asteroides[i].x > print.cvs.width+print.cvs.width/4){
+		if(asteroides[i].x > print.cvs.width+print.cvs.width/4)
 			asteroides[i].x = -print.cvs.width/4;
-		}
-		if(asteroides[i].x < -print.cvs.width/4){
+		if(asteroides[i].x < -print.cvs.width/4)
 			asteroides[i].x = print.cvs.width+print.cvs.width/4;
-		}
-		if(asteroides[i].y > print.cvs.height+print.cvs.height/4){
+		if(asteroides[i].y > print.cvs.height+print.cvs.height/4)
 			asteroides[i].y = -print.cvs.height/4;
-		}
-		if(asteroides[i].y < -print.cvs.height/4){
+		if(asteroides[i].y < -print.cvs.height/4)
 			asteroides[i].y = print.cvs.height+print.cvs.height/4;
-		}
 
 		asteroides[i].af += asteroides[i].v;
 	}

@@ -16,18 +16,7 @@ class Bala{
 		this.x -= Math.cos(this.a*(2*Math.PI/360))*player.v/7;
 		this.y -= Math.sin(this.a*(2*Math.PI/360))*player.v/7;
 
-		if(this.x > (print.cvs.width*2)){
-			this.x = -999999999999999;
-		}
-		if(this.x < -(print.cvs.width)){
-			this.x = -999999999999999;
-		}
-		if(this.y > (print.cvs.height*2)){
-			this.y = -999999999999999;
-		}
-		if(this.y < -(print.cvs.height)){
-			this.y = -999999999999999;
-		}
+		this.die();
 	}
 	kill(){
 		for(let i = 0;i < asteroides.length;i++){
@@ -71,7 +60,18 @@ class Bala{
 						}
 					}
 				}
+				this.die();
 			}
 		}
+	}
+	die(){
+		if(this.x > (print.cvs.width*2))
+			this.x = -999999999999999;
+		if(this.x < -(print.cvs.width))
+			this.x = -999999999999999;
+		if(this.y > (print.cvs.height*2))
+			this.y = -999999999999999;
+		if(this.y < -(print.cvs.height))
+			this.y = -999999999999999;
 	}
 }

@@ -21,46 +21,35 @@ class Player{
 		}
 		this.move();
 		this.die();
-		for(let i = 0;i < balas.length;i++){
+		for(let i = 0;i < balas.length;i++)
 			balas[i].update();
-		}
-		if(this.balas > 99){
+		if(this.balas > 99)
 			this.balas = 99;
-		}
-		if(this.balas < 0){
+		if(this.balas < 0)
 			this.balas = 0;
-		}
-		if(this.hp > 100){
+		if(this.hp > 100)
 			this.hp = 100;
-		}
 	}
 	move(){
 		fisicas.setForce(player,this.ar,this.v);
-		if(!uArrow){
+		if(!uArrow)
 			fisicas.t -= 2;
-		} else {
-			this.ar = this.a
-		}
-		
-		if(lArrow){
-			this.a -= this.v/25;
-		}
-		if(rArrow){
-			this.a += this.v/25;
-		}
+		else 
+			this.ar = this.a;
 
-		if(this.x > print.cvs.width){
+		if(lArrow)
+			this.a -= this.v/25;
+		if(rArrow)
+			this.a += this.v/25;
+
+		if(this.x > print.cvs.width)
 			this.x = 0;
-		}
-		if(this.x < 0){
+		if(this.x < 0)
 			this.x = print.cvs.width;
-		}
-		if(this.y > print.cvs.height){
+		if(this.y > print.cvs.height)
 			this.y = 0;
-		}
-		if(this.y < 0){
+		if(this.y < 0)
 			this.y = print.cvs.height;
-		}
 	}
 	shot(){
 		if(eDown && this.balas > 0){
