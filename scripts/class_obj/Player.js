@@ -81,15 +81,24 @@ class Player{
 						"m":Math.floor(Math.random()*2)
 					};
 					asteroides[i].d *= 0.5;
+					asteroides[asteroides.length] = {
+						"x":Math.random()*((print.cvs.width+print.cvs.width/4)+print.cvs.width/4)-print.cvs.width/4,
+						"y":Math.random()*((print.cvs.height+print.cvs.height/4)+print.cvs.height/4)-print.cvs.height/4,
+						"a":Math.random()*360,
+						"af":Math.random()*360,
+						"v":Math.random()*(0.2+0.1)-0.1,
+						"d":Math.random()*(200-100)+100,
+						"m":Math.floor(Math.random()*2)
+					};
 				} else {
-					if(Math.floor(Math.random()*6) == 1){
+					if(Math.floor(Math.random()*1) == 1){
 						asteroides[i] = {
 							"x":Math.random()*((print.cvs.width+print.cvs.width/4)+print.cvs.width/4)-print.cvs.width/4,
 							"y":Math.random()*((print.cvs.height+print.cvs.height/4)+print.cvs.height/4)-print.cvs.height/4,
 							"a":Math.random()*360,
 							"af":Math.random()*360,
 							"v":Math.random()*(0.2+0.1)-0.1,
-							"d":Math.random()*(200-32)+32,
+							"d":Math.random()*(200-100)+100,
 							"m":Math.floor(Math.random()*2)
 						};
 					} else {
