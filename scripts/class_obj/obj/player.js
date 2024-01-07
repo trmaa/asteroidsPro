@@ -4,7 +4,7 @@ let player = new Player(
 	//wh
 	32,32,
 	//mv
-	5,50,
+	5,0.1,
 	//hp,lv
 	100
 );

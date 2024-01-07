@@ -6,6 +6,8 @@ class Player{
 		this.h = h;
 		this.m = m;
 		this.v = v;
+		this.speed = [0,0];
+		this.maxspeed = 2;
 		this.a = 90;
 		this.balas = 99;
 		this.ar = 90;
@@ -21,8 +23,7 @@ class Player{
 		}
 		this.move();
 		this.die();
-		for(let i = 0;i < balas.length;i++)
-			balas[i].update();
+		balas.forEach(b=>{b.update()});
 		if(this.balas > 99)
 			this.balas = 99;
 		if(this.balas < 0)
@@ -31,16 +32,18 @@ class Player{
 			this.hp = 100;
 	}
 	move(){
-		fisicas.setForce(player,this.ar,this.v);
-		if(!uArrow)
-			fisicas.t -= 2;
-		else 
-			this.ar = this.a;
+		(this.speed[0]<0.05&&this.speed[0]>(-0.05))? this.speed[0] = 0 : this.speed[0] *= 0.999;
+		(this.speed[1]<0.05&&this.speed[1]>(-0.05))? this.speed[1] = 0 : this.speed[1] *= 0.999;
+
+		if(uArrow){
+			this.speed[0] -= this.v*Math.cos(this.a*Math.PI/180);
+			this.speed[1] -= this.v*Math.sin(this.a*Math.PI/180);
+		}
 
 		if(lArrow)
-			this.a -= this.v/25;
+			this.a -= this.maxspeed;
 		if(rArrow)
-			this.a += this.v/25;
+			this.a += this.maxspeed;
 
 		if(this.x > print.cvs.width)
 			this.x = 0;
@@ -50,6 +53,10 @@ class Player{
 			this.y = 0;
 		if(this.y < 0)
 			this.y = print.cvs.height;
+
+
+		this.x += this.speed[0];
+		this.y += this.speed[1];
 	}
 	shot(){
 		if(eDown && this.balas > 0){

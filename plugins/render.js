@@ -4,8 +4,8 @@ function render(){
 	//estrellas
 	for(let i = 0;i < estrellas.length;i++){
 		print.print(
-			print.center(estrellas[i].x,"w",player,0.2),print.center(estrellas[i].y,"h",player,0.2),
-			estrellas[i].d,estrellas[i].d,
+			print.center(estrellas[i].x*10/estrellas[i].d,"w",player,0.2),print.center(estrellas[i].y*10/estrellas[i].d,"h",player,0.2),
+			estrellas[i].d/4,estrellas[i].d/4,
 			"#fffe"
 		);
 	}

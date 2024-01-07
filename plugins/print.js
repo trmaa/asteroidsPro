@@ -39,7 +39,7 @@ class Print{
 		this.ctx.fillRect(0,0,this.cvs.width,this.cvs.height);
 	}
 	gradienter(x1,y1,x2,y2,c){
-		let gradiente = this.ctx.createRadialGradient(x1,y1,0,x2,y2,1000);
+		let gradiente = this.ctx.createRadialGradient(Math.round(x1),Math.round(y1),0,Math.round(x2),Math.round(y2),1000);
 
 		for(let step = 0;step < c.length;step++){
 			gradiente.addColorStop(step*1/c.length,c[step]);
