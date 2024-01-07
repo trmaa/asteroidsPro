@@ -14,8 +14,10 @@ class Player{
 		this.hp = hp;
 		this.delay = 30;
 		this.score = 0;
+		this.sprite = "sprites/player/player0.png";
 	}
 	update(){
+		this.sprite = "sprites/player/player0.png";
 		this.delay++;
 		if(this.delay > 5){
 			this.shot();
@@ -36,6 +38,7 @@ class Player{
 		(this.speed[1]<0.05&&this.speed[1]>(-0.05))? this.speed[1] = 0 : this.speed[1] *= 0.999;
 
 		if(uArrow){
+			this.sprite = "sprites/player/player1.png";
 			this.speed[0] -= this.v*Math.cos(this.a*Math.PI/180);
 			this.speed[1] -= this.v*Math.sin(this.a*Math.PI/180);
 		}

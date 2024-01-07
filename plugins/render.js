@@ -20,7 +20,7 @@ function render(){
 
 	//player
 	print.printimg(
-		"sprites/player/player0.png",
+		player.sprite,
 		player.x,player.y,player.w,player.h,player.a-90
 	);
 	//balas
