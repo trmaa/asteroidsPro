@@ -13,8 +13,8 @@ class Bala{
 		this.move();
 	}
 	move(){
-		this.x -= Math.cos(this.a*(2*Math.PI/360))*player.maxspeed*4;
-		this.y -= Math.sin(this.a*(2*Math.PI/360))*player.maxspeed*4;
+		this.x -= Math.cos(this.a*(2*Math.PI/360))*player.maxspeed*4*window.deltaTime*100;
+		this.y -= Math.sin(this.a*(2*Math.PI/360))*player.maxspeed*4*window.deltaTime*100;
 
 		this.die();
 	}

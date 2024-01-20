@@ -13,7 +13,7 @@ class Player{
 		this.maxspeed = 2;
 		
 		this.a = 90;
-		this.va = 0.2;
+		this.va = 1.3;
 		this.aspeed = 0;
 		this.maxaspeed = 2;
 		
@@ -49,7 +49,7 @@ class Player{
 		(this.speed[0]<0.05&&this.speed[0]>(-0.05))? this.speed[0] = 0 : this.speed[0] *= 0.999;
 		(this.speed[1]<0.05&&this.speed[1]>(-0.05))? this.speed[1] = 0 : this.speed[1] *= 0.999;
 
-		(this.aspeed<0.05&&this.aspeed>(-0.05))? this.aspeed = 0 : this.aspeed *= 0.95;
+		(this.aspeed<0.2&&this.aspeed>(-0.2))? this.aspeed = 0 : this.aspeed *= 0.5;
 
 		if(uArrow){
 			this.sprite = "sprites/player/player1.png";
@@ -72,10 +72,10 @@ class Player{
 			this.y = print.cvs.height;
 
 
-		this.x += this.speed[0];
-		this.y += this.speed[1];
+		this.x += this.speed[0]*window.deltaTime*100;
+		this.y += this.speed[1]*window.deltaTime*100;
 
-		this.a += this.aspeed;
+		this.a += this.aspeed*window.deltaTime*100;
 	}
 	shot(){
 		if(eDown && this.balas > 0){

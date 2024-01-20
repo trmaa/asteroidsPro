@@ -14,8 +14,8 @@ for(let i = 0;i < print.cvs.height/100;i++){
 
 setInterval(function(){
 	for(let i = 0;i < asteroides.length;i++){
-		asteroides[i].x -= Math.cos(asteroides[i].a*(2*Math.PI/360))*0.5;
-		asteroides[i].y -= Math.sin(asteroides[i].a*(2*Math.PI/360))*0.5;
+		asteroides[i].x -= Math.cos(asteroides[i].a*(2*Math.PI/360))*0.5*window.deltaTime*100;
+		asteroides[i].y -= Math.sin(asteroides[i].a*(2*Math.PI/360))*0.5*window.deltaTime*100;
 
 		if(asteroides[i].x > print.cvs.width+print.cvs.width/4)
 			asteroides[i].x = -print.cvs.width/4;
