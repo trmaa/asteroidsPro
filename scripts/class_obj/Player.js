@@ -2,18 +2,30 @@ class Player{
 	constructor(x,y,w,h,m,v,hp){
 		this.x = x;
 		this.y = y;
+		
 		this.w = w;
 		this.h = h;
+		
 		this.m = m;
+		
 		this.v = v;
 		this.speed = [0,0];
 		this.maxspeed = 2;
+		
 		this.a = 90;
+		this.va = 0.2;
+		this.aspeed = 0;
+		this.maxaspeed = 2;
+		
 		this.balas = 99;
 		this.ar = 90;
+		
 		this.hp = hp;
+		
 		this.delay = 30;
+		
 		this.score = 0;
+		
 		this.sprite = "sprites/player/player0.png";
 	}
 	update(){
@@ -37,6 +49,8 @@ class Player{
 		(this.speed[0]<0.05&&this.speed[0]>(-0.05))? this.speed[0] = 0 : this.speed[0] *= 0.999;
 		(this.speed[1]<0.05&&this.speed[1]>(-0.05))? this.speed[1] = 0 : this.speed[1] *= 0.999;
 
+		(this.aspeed<0.05&&this.aspeed>(-0.05))? this.aspeed = 0 : this.aspeed *= 0.95;
+
 		if(uArrow){
 			this.sprite = "sprites/player/player1.png";
 			this.speed[0] -= this.v*Math.cos(this.a*Math.PI/180);
@@ -44,9 +58,9 @@ class Player{
 		}
 
 		if(lArrow)
-			this.a -= this.maxspeed;
+			this.aspeed -= this.va;
 		if(rArrow)
-			this.a += this.maxspeed;
+			this.aspeed += this.va;
 
 		if(this.x > print.cvs.width)
 			this.x = 0;
@@ -60,6 +74,8 @@ class Player{
 
 		this.x += this.speed[0];
 		this.y += this.speed[1];
+
+		this.a += this.aspeed;
 	}
 	shot(){
 		if(eDown && this.balas > 0){
